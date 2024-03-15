@@ -1,0 +1,7 @@
+**node_modules/
+**.editorconfig
+.editorconfig
+node_modules
+readme
+tests
+jest.config.js
