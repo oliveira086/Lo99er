@@ -48,22 +48,28 @@ var DatabaseRepository = /** @class */ (function () {
     }
     DatabaseRepository.prototype.save = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var elasticConnection;
+            var elasticConnection, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection];
+                    case 0:
+                        _a.trys.push([0, 3, , 4]);
+                        return [4 /*yield*/, connection];
                     case 1:
                         elasticConnection = _a.sent();
                         data["@timestamp"] = data.timestamp;
                         delete data.timestamp;
-                        return [4 /*yield*/, elasticConnection.helpers.bulk({
+                        return [4 /*yield*/, (elasticConnection === null || elasticConnection === void 0 ? void 0 : elasticConnection.helpers.bulk({
                                 datasource: [data],
                                 pipeline: "ent-search-generic-ingestion",
                                 onDocument: function (doc) { return ({ index: { _index: indexPrefix } }); },
-                            })];
+                            }))];
                     case 2:
                         _a.sent();
-                        return [2 /*return*/];
+                        return [3 /*break*/, 4];
+                    case 3:
+                        error_1 = _a.sent();
+                        return [3 /*break*/, 4];
+                    case 4: return [2 /*return*/];
                 }
             });
         });

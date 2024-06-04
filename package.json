@@ -1,6 +1,6 @@
 {
   "name": "lo99er",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A log library integrate with elasticsearch",
   "main": "./index.js",
   "scripts": {

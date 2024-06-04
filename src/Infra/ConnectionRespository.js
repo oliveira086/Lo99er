@@ -44,15 +44,20 @@ var ConnectionRepository = /** @class */ (function () {
     ConnectionRepository.prototype.connect = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, new elasticsearch_1.Client({
-                        requestTimeout: 5000,
-                        node: process.env.LO99ER_ELASTIC_SERVER,
-                        auth: {
-                            // apiKey: 'N0p1M000NEJacFRVbVhGOWU5X0M6dmdGTGZCYTBUWDZZMVQ2Rk1SeVlZQQ=='
-                            username: "".concat(process.env.LO99ER_ELASTIC_USER),
-                            password: "".concat(process.env.LO99ER_ELASTIC_PHRASE)
-                        }
-                    })];
+                try {
+                    return [2 /*return*/, new elasticsearch_1.Client({
+                            requestTimeout: 5000,
+                            node: process.env.LO99ER_ELASTIC_SERVER,
+                            auth: {
+                                username: "".concat(process.env.LO99ER_ELASTIC_USER),
+                                password: "".concat(process.env.LO99ER_ELASTIC_PHRASE)
+                            }
+                        })];
+                }
+                catch (error) {
+                    // pass
+                }
+                return [2 /*return*/];
             });
         });
     };

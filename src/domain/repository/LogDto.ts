@@ -5,6 +5,7 @@ export default interface LogDto {
   message: string
   route: string
   data: string
+  header?: string,
   timestamp?: string
   severity?: string
   "@timestamp"?: string

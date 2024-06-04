@@ -10,14 +10,18 @@ export default class DatabaseRepository {
   }
 
   async save (data: LogDto): Promise<void> {
-    const elasticConnection: any = await connection;
-    data["@timestamp"] = data.timestamp;
-    delete data.timestamp;
+    try {
+      const elasticConnection: any = await connection;
+      data["@timestamp"] = data.timestamp;
+      delete data.timestamp;
 
-    await elasticConnection.helpers.bulk({
-      datasource: [data],
-      pipeline: "ent-search-generic-ingestion",
-      onDocument: (doc:any) => ({ index: { _index: indexPrefix }}),
-    });
+      await elasticConnection?.helpers.bulk({
+        datasource: [data],
+        pipeline: "ent-search-generic-ingestion",
+        onDocument: (doc:any) => ({ index: { _index: indexPrefix }}),
+      });
+    } catch (error) {
+      //pass
+    }
   }
 }

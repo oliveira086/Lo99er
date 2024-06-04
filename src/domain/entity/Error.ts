@@ -6,6 +6,7 @@ export default class Error {
     readonly message: string,
     readonly route: string,
     readonly data: string,
+    readonly header?: string,
     readonly timestamp?: string,
     readonly severity?: string,
   ) {

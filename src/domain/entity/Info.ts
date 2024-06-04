@@ -6,6 +6,7 @@ export default class Info {
     readonly message: string,
     readonly route: string,
     readonly data: string,
+    readonly header?: string,
     readonly timestamp?: string,
     readonly severity?: string,
   ) {

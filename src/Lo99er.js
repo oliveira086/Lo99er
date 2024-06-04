@@ -47,64 +47,85 @@ require('dotenv').config();
 module.exports = {
     info: function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var log, database;
+            var log, database, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        log = new Info_1.default("".concat(process.env.LO99ER_SERVICE_NAME), "".concat(process.env.LO99ER_SERVICE_VERSION), "".concat(process.env.LO99ER_APP_KEY), data.message, data.route, data.data);
+                        _a.trys.push([0, 2, , 3]);
+                        log = new Info_1.default("".concat(process.env.LO99ER_SERVICE_NAME), "".concat(process.env.LO99ER_SERVICE_VERSION), "".concat(process.env.LO99ER_APP_KEY), data.message, data.route, data.data, data.header);
+                        console.log("🚀 ~ info ~ log:", log);
                         database = new DatabaseRespository_1.default();
                         return [4 /*yield*/, database.save(log)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/, log];
+                    case 2:
+                        error_1 = _a.sent();
+                        throw error_1;
+                    case 3: return [2 /*return*/];
                 }
             });
         });
     },
     success: function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var log, database;
+            var log, database, error_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        log = new Success_1.default("".concat(process.env.LO99ER_SERVICE_NAME), "".concat(process.env.LO99ER_SERVICE_VERSION), "".concat(process.env.LO99ER_APP_KEY), data.message, data.route, data.data);
+                        _a.trys.push([0, 2, , 3]);
+                        log = new Success_1.default("".concat(process.env.LO99ER_SERVICE_NAME), "".concat(process.env.LO99ER_SERVICE_VERSION), "".concat(process.env.LO99ER_APP_KEY), data.message, data.route, data.data, data.header);
                         database = new DatabaseRespository_1.default();
                         return [4 /*yield*/, database.save(log)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/, log];
+                    case 2:
+                        error_2 = _a.sent();
+                        throw error_2;
+                    case 3: return [2 /*return*/];
                 }
             });
         });
     },
     warn: function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var log, database;
+            var log, database, error_3;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        log = new Warn_1.default("".concat(process.env.LO99ER_SERVICE_NAME), "".concat(process.env.LO99ER_SERVICE_VERSION), "".concat(process.env.LO99ER_APP_KEY), data.message, data.route, data.data);
+                        _a.trys.push([0, 2, , 3]);
+                        log = new Warn_1.default("".concat(process.env.LO99ER_SERVICE_NAME), "".concat(process.env.LO99ER_SERVICE_VERSION), "".concat(process.env.LO99ER_APP_KEY), data.message, data.route, data.data, data.header);
                         database = new DatabaseRespository_1.default();
                         return [4 /*yield*/, database.save(log)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/, log];
+                    case 2:
+                        error_3 = _a.sent();
+                        throw error_3;
+                    case 3: return [2 /*return*/];
                 }
             });
         });
     },
     error: function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var log, database;
+            var log, database, error_4;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        log = new Error_1.default("".concat(process.env.LO99ER_SERVICE_NAME), "".concat(process.env.LO99ER_SERVICE_VERSION), "".concat(process.env.LO99ER_APP_KEY), data.message, data.route, data.data);
+                        _a.trys.push([0, 2, , 3]);
+                        log = new Error_1.default("".concat(process.env.LO99ER_SERVICE_NAME), "".concat(process.env.LO99ER_SERVICE_VERSION), "".concat(process.env.LO99ER_APP_KEY), data.message, data.route, data.data, data.header);
                         database = new DatabaseRespository_1.default();
                         return [4 /*yield*/, database.save(log)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/, log];
+                    case 2:
+                        error_4 = _a.sent();
+                        throw error_4;
+                    case 3: return [2 /*return*/];
                 }
             });
         });
